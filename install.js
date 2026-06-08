@@ -23,6 +23,7 @@ module.exports = {
         venv: "env",
         path: "app",
         message: [
+          "pip install cython setuptools",
           "pip install -r requirements.txt",
           "pip install gradio spaces"
         ]
