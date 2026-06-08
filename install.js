@@ -4,7 +4,16 @@ module.exports = {
       method: "shell.run",
       params: {
         message: [
-          "git clone https://huggingface.co/spaces/jasongzy/Puppeteer app"
+          "git clone --recursive https://github.com/Seed3D/Puppeteer.git app"
+        ]
+      }
+    },
+    {
+      method: "shell.run",
+      params: {
+        path: "app",
+        message: [
+          "curl -O https://huggingface.co/spaces/jasongzy/Puppeteer/raw/main/app.py"
         ]
       }
     },
@@ -14,7 +23,8 @@ module.exports = {
         venv: "env",
         path: "app",
         message: [
-          "pip install -r requirements.txt"
+          "pip install -r requirements.txt",
+          "pip install gradio spaces"
         ]
       }
     },
