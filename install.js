@@ -12,9 +12,7 @@ module.exports = {
       method: "shell.run",
       params: {
         message: [
-          "git clone https://huggingface.co/spaces/jasongzy/Puppeteer ui_space",
-          "python -c \"import shutil, os; [shutil.copy(os.path.join('ui_space', f), 'app') for f in os.listdir('ui_space') if os.path.isfile(os.path.join('ui_space', f)) and f != 'requirements.txt']\"",
-          "python -c \"import shutil; shutil.rmtree('ui_space', ignore_errors=True)\""
+          "python -c \"import urllib.request; req = urllib.request.Request('https://huggingface.co/spaces/jasongzy/Puppeteer/resolve/main/app.py', headers={'User-Agent': 'Mozilla/5.0'}); open('app/app.py', 'wb').write(urllib.request.urlopen(req).read())\""
         ]
       }
     },
