@@ -13,7 +13,7 @@ module.exports = {
       params: {
         path: "app",
         message: [
-          "curl -O https://huggingface.co/spaces/jasongzy/Puppeteer/raw/main/app.py",
+          "python -c \"import urllib.request; urllib.request.urlretrieve('https://huggingface.co/spaces/jasongzy/Puppeteer/resolve/main/app.py', 'app.py')\"",
           "python -c \"content = open('requirements.txt').read(); open('requirements.txt', 'w').write(content.replace('tetgen==0.5.2', 'tetgen'))\""
         ]
       }
@@ -24,6 +24,7 @@ module.exports = {
         venv: "env",
         path: "app",
         message: [
+          "pip install cython setuptools",
           "pip install -r requirements.txt",
           "pip install gradio spaces"
         ]
