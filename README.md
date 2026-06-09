@@ -1,2 +1,2 @@
 # pinokio-puppeteer-test
-pinokio for puppeteer
+A pinokio script for [puppeteer](https://github.com/puppeteer/puppeteer)
